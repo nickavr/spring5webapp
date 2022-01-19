@@ -15,8 +15,8 @@ public class AuthorController {
     }
 
     @RequestMapping("/authors")
-    public String getAuthors(Model model){
-        model.addAttribute("authors", authorRepository.findAll()); //key value for the html to know how to map the provided data
+    public String getAuthors(Model model){ //as arguments, what we get from the request made to the server (we re the server)
+        model.addAttribute("authors", authorRepository.findAll()); //key value for the html to know how to map the provided data, used in template/authors/list.html
         return "authors/list"; //this looks into resources -> templates -> authors and returns the "list.html"
     }
 }
